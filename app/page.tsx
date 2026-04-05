@@ -1,8 +1,8 @@
 import Form from "./components/Form";
 import Icon from '@mdi/react';
 import { mdiWhatsapp } from '@mdi/js';
-
 export default function Home() {
+
   return (
     <main style={{ fontFamily: "Arial, sans-serif" }}>
       {/* HEADER */}
@@ -65,7 +65,9 @@ export default function Home() {
       <section style={{ padding: "40px" }}>
         <Form />
       </section>
-      <Icon path={mdiWhatsapp} size={1} />
+      <a href="https://wa.me/573138947226" target="_blank" rel="noopener noreferrer">
+        <Icon path={mdiWhatsapp} size={1} style={{ position: "fixed", fontSize: "24px", bottom: "10px", right: "10px", fill: "var(--primary)" }} />
+      </a>
     </main>
   );
 }

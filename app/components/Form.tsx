@@ -56,6 +56,8 @@ export default function Form() {
         return true;
     };
 
+
+
     const handleSubmit = async (e: any) => {
         e.preventDefault();
         setMsg("");
@@ -65,7 +67,7 @@ export default function Form() {
         setLoading(true);
 
         try {
-            await fetch("https://sheetdb.io/api/v1/TU_API_ID", {
+            await fetch("https://sheetdb.io/api/v1/mxv920vlgabgf", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -76,6 +78,8 @@ export default function Form() {
             });
 
             setMsg("Solicitud enviada ✅");
+            const mensaje = `Hola, mi nombre es ${form.nombre}, teléfono: ${form.telefono}, problema: ${form.problema}`;
+            window.location.href = `https://wa.me/573138947226?text=${encodeURIComponent(mensaje)}`;
             setForm({ nombre: "", telefono: "", problema: "" });
 
         } catch (error) {
@@ -141,6 +145,8 @@ export default function Form() {
             </button>
 
             <p>{msg}</p>
+
+
         </form>
     );
 }
