@@ -27,14 +27,29 @@ export default function Form() {
         });
     };
 
+    // ✅ Regex
+    const regexNombre = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/;
+    const regexTelefono = /^[0-9]+$/;
+    const regexProblema = /^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ\s]+$/;
+
     const validate = () => {
         if (!form.nombre || !form.telefono || !form.problema) {
             setMsg("Todos los campos son obligatorios");
             return false;
         }
 
-        if (!/^[0-9]{7,15}$/.test(form.telefono)) {
-            setMsg("Teléfono inválido");
+        if (!regexNombre.test(form.nombre)) {
+            setMsg("El nombre solo debe contener letras");
+            return false;
+        }
+
+        if (!regexTelefono.test(form.telefono)) {
+            setMsg("El teléfono solo debe contener números");
+            return false;
+        }
+
+        if (!regexProblema.test(form.problema)) {
+            setMsg("La descripción solo debe contener letras y números");
             return false;
         }
 
@@ -50,7 +65,7 @@ export default function Form() {
         setLoading(true);
 
         try {
-            await fetch("https://sheetdb.io/api/v1/mxv920vlgabgf", {
+            await fetch("https://sheetdb.io/api/v1/TU_API_ID", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -68,7 +83,9 @@ export default function Form() {
         }
 
         setLoading(false);
+
     };
+
 
     return (
         <form onSubmit={handleSubmit} style={{ maxWidth: "400px", margin: "auto" }}>
@@ -78,6 +95,9 @@ export default function Form() {
                 value={form.nombre}
                 onChange={handleChange}
                 style={{ width: "100%", padding: "10px", marginBottom: "10px" }}
+                onKeyPress={(e) => {
+                    if (!/[a-zA-Z\s]/.test(e.key)) e.preventDefault();
+                }}
             />
 
             <input
