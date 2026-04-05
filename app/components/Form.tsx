@@ -30,7 +30,7 @@ export default function Form() {
     // ✅ Regex
     const regexNombre = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/;
     const regexTelefono = /^[0-9]+$/;
-    const regexProblema = /^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ\s]+$/;
+    const regexProblema = /^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ\s+]+$/;
 
     const validate = () => {
         if (!form.nombre || !form.telefono || !form.problema) {
@@ -108,13 +108,23 @@ export default function Form() {
                 style={{ width: "100%", padding: "10px", marginBottom: "10px" }}
             />
 
-            <textarea
+            <select
                 name="problema"
-                placeholder="¿Qué problema tiene tu PC?"
                 value={form.problema}
                 onChange={handleChange}
                 style={{ width: "100%", padding: "10px", marginBottom: "10px" }}
-            />
+            >
+                <option value="" disabled hidden>
+                    ¿Qué problema tiene tu PC?
+                </option>
+                <option value="Limpieza">Limpieza</option>
+                <option value="Mantenimiento">Mantenimiento</option>
+                <option value="Instalación de programas">Instalación de programas</option>
+                <option value="Instalación de SSD">Instalación de SSD</option>
+                <option value="Limpieza + Mantenimiento + Instalación de programas">
+                    Limpieza + Mantenimiento + Instalación de programas
+                </option>
+            </select>
 
             <button
                 type="submit"
