@@ -50,7 +50,7 @@ export default function Form() {
         setLoading(true);
 
         try {
-            await fetch("https://sheetdb.io/api/v1/TU_API_ID", {
+            await fetch("https://sheetdb.io/api/v1/mxv920vlgabgf", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
