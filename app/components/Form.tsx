@@ -121,13 +121,12 @@ export default function Form() {
                 <option value="" disabled hidden>
                     ¿Qué problema tiene tu PC?
                 </option>
-                <option value="Limpieza">Limpieza</option>
-                <option value="Mantenimiento">Mantenimiento</option>
+                <option value="Limpieza interna profesional (eliminación de polvo)">Limpieza interna profesional (eliminación de polvo)</option>
+                <option value="Mantenimiento Correctivo">Mantenimiento Correctivo (Limpieza de placa madre y pasta térmica para procesador)</option>
                 <option value="Instalación de programas">Instalación de programas</option>
-                <option value="Instalación de SSD">Instalación de SSD</option>
-                <option value="Limpieza + Mantenimiento + Instalación de programas">
-                    Limpieza + Mantenimiento + Instalación de programas
-                </option>
+                <option value="Optimización Sistema Operativo">Optimización Sistema Operativo</option>
+                <option value="Instalación de SSD (tu PC hasta 5 veces más rápido)">Instalación de SSD (tu PC hasta 5 veces más rápido)</option>
+                <option value="Limpieza + Mantenimiento + Instalación de programas">Limpieza + Mantenimiento + Instalación de programas </option>
             </select>
 
             <button
@@ -138,7 +137,8 @@ export default function Form() {
                     padding: "10px",
                     background: "#00c853",
                     color: "white",
-                    border: "none"
+                    border: "none",
+                    borderRadius: "10px",
                 }}
             >
                 {loading ? "Enviando..." : "Solicitar servicio"}

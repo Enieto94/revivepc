@@ -31,19 +31,19 @@ export default function Home() {
 
           <div style={{ flex: "1 1 320px", maxWidth: "500px", textAlign: "left" }}>
             <div style={{ marginBottom: "24px" }}>
-              <h1>Servicios</h1>
+              <h1>REVIVEPC - ZIPAQUIRÁ</h1>
               <p>Recupera la velocidad de tu computador, lo dejamos como nuevo en menos de 24 horas 🚀</p>
               <br />
 
               <div style={{ marginBottom: "24px" }}>
-                <h3>🧼 Limpieza</h3>
-                <p>Eliminación de polvo y mantenimiento interno</p>
-                <h3>🔥 Pasta térmica</h3>
-                <p>Reduce temperatura y mejora rendimiento</p>
-                <h3>⚡ SSD y/o RAM</h3>
-                <p>Hasta 5X más velocidad</p>
-                <h3>🛠️Instalación de programas </h3>
-                <p>(Antivirus, Diseño, Ofimática o Modelado)</p>
+                <h3 style={{ fontWeight: "bold" }}>🧼 LIMPIEZA</h3>
+                <p style={{ marginBottom: "10px" }} >Eliminación de polvo y mantenimiento interno</p>
+                <h3 style={{ fontWeight: "bold" }}>🔥 PASTA TÉRMICA</h3>
+                <p style={{ marginBottom: "10px" }} >Reduce temperatura y mejora rendimiento</p>
+                <h3 style={{ fontWeight: "bold" }}>⚡ MEJORA A SSD y/o RAM</h3>
+                <p style={{ marginBottom: "10px" }} >Hasta 5X más velocidad</p>
+                <h3 style={{ fontWeight: "bold" }}>🛠️INSTALACIÓN DE PROGRAMAS</h3>
+                <p style={{ marginBottom: "10px" }} >(Antivirus, Diseño, Ofimática o Modelado)</p>
               </div>
             </div>
 
